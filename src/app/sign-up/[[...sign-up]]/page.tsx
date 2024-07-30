@@ -1,5 +1,10 @@
 import { SignUp } from "@clerk/nextjs";
 
 export default function Page() {
-  return <SignUp />;
+  return (
+    <div className="flex items-center justify-center flex-col gap-10 mt-20">
+      {/* <h1 className="text-4xl font-bold mt-20">This is signup page</h1> */}
+      <SignUp />
+    </div>
+  );
 }
