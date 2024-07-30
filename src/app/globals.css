@@ -139,14 +139,15 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --input: 160 60% 45%;
     --ring: 212.7 26.8% 83.9%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-5: 340 75% 55%
   }
+    
 }
 
 @layer base {
@@ -156,4 +157,80 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  .H1 {
+    @apply text-[56px] leading-[64px] tracking-[-.050em] font-medium;
+  }
+  .H2 {
+    @apply text-[48px] leading-[56px] tracking-[-.045em] font-medium;
+  }
+  .H3 {
+    @apply text-[40px] leading-[48px] tracking-[-.030em] font-medium;
+  }
+  .H4 {
+    @apply text-[32px] leading-[40px] tracking-[-.012em] font-medium;
+  }
+  .H5 {
+    @apply text-[24px] leading-[32px] tracking-[-.0050em] font-medium;
+  }
+  .H6 {
+    @apply text-[20px] leading-[28px]  font-medium;
+  }
+
+
+
+  /* Labels */
+
+  .Label-XL {
+    @apply text-[24px] leading-[32px] tracking-[-.050em] font-medium;
+  }
+  .Label-L {
+    @apply text-[18px] leading-[24px] tracking-[-.050em] font-medium;
+  }
+  .Label-M {
+    @apply text-[16px] leading-[24px] tracking-[-.035em] font-medium;
+  }
+  .Label-S {
+    @apply text-[14px] leading-[20px] tracking-[-.020em] font-medium;
+  }
+  .Label-XS {
+    @apply text-[12px] leading-[16px]  font-medium;
+  }
+
+  /* Paragraphs */
+
+  .Paragraph-XL {
+    @apply text-[24px] leading-[32px] tracking-[-.015em] ;
+  }
+  .Paragraph-L {
+    @apply text-[18px] leading-[24px] tracking-[-.015em] ;
+  }
+  .Paragraph-M {
+    @apply text-[16px] leading-[24px] tracking-[-.011em] ;
+  }
+  .Paragraph-S {
+    @apply text-[14px] leading-[20px] tracking-[-.006em] ;
+  }
+  .Paragraph-XS {
+    @apply text-[12px] leading-[16px] ;
+  }
+
+ /* Subheadings */
+
+  
+  .Subheading-M {
+    @apply text-[16px] leading-[24px] tracking-[-.050em] font-medium;
+  }
+  .Subheading-S {
+    @apply text-[14px] leading-[20px] tracking-[-.050em] font-medium;
+  }
+  .Subheading-XS {
+    @apply text-[12px] leading-[16px] tracking-[-.035em] font-medium;
+  }
+  .Subheading-XXS {
+    @apply text-[11px] leading-[12px] tracking-[-.015em] font-medium;
+  }
+
 }
