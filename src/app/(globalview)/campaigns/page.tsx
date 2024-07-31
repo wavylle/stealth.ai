@@ -1,6 +1,4 @@
 import CampaignCo from "@/components/Campaign/campaigndisplay";
-import { HeaderCustom, HeaderIcon, HeaderSubtitle, HeaderTitle } from "@/components/custom/Header";
-import { BrainCircuit } from "lucide-react";
 
 const campaigns = [
     {
