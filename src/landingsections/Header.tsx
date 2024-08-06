@@ -2,14 +2,17 @@ import ArrowRight from "../assets/arrow-right.svg";
 import Logo from "../assets/logosaas.png";
 import Image from "next/image";
 import MenuIcon from "../assets/menu.svg";
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 export const Header = () => {
+  const { userId }: { userId: string | null } = auth();
   return (
     <header className="sticky top-0 backdrop-blur-sm z-20">
     <div className="flex justify-center items-center py-3 bg-black text-white text-sm gap-3">
-      <p className="text-white/60 hidden md:block">Streamline your workflow and boost your productivity</p>
+      <p className="text-white/60 hidden md:block">Automate your routine calls and drive results</p>
       <div className="inline-flex gap-1 items-center">
-      <p>Get started for free</p>
+      <a href="/auth/sign-in">Get started for free</a>
       <ArrowRight className="h-4 w-f inline-flex justify-center items-center" />
       </div>
     </div>
@@ -25,10 +28,16 @@ export const Header = () => {
             <a href="#pricing">Pricing</a>
             {/* <a href="#">Updates</a>
             <a href="#">Help</a> */}
-            <a href="/auth/sign-in" className="bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex justify-center tracking-tight">
+            
+            {userId ? (
+            <div className="flex gap-4 items-center">
+                <UserButton />
+            </div>
+            ) : (
+              <a href="/auth/sign-in" className="bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex justify-center tracking-tight">
               Get for free
             </a>
-
+            )}
           </nav>
         </div>
       </div>
