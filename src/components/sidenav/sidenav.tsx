@@ -61,10 +61,10 @@ const SETTINGS = [
 export default function SideNavBar() {
   const pathname = usePathname();
   return (
-    <div className='flex flex-row w-[252px]'>
+    <div className='flex flex-row w-[242px] min-w-[242px]'>
       <div className=' w-full h-screen flex flex-col items-start justify-start p-5 box-border gap-[19px] leading-[normal] tracking-[normal] text-left text-sm text-text-sub-500 font-label-x-small'>
         <div className='flex flex-row items-start self-stretch justify-start gap-3 text-text-main-900'>
-          <BrainCircuit className=" w-8 h-full mx-[2px] stroke-slate-500 stroke-[2px] " />
+          <BrainCircuit className=' w-8 h-full mx-[2px] stroke-slate-500 stroke-[2px] ' />
           <div className='flex flex-col items-start justify-start flex-1 gap-1'>
             <div className='[text-decoration:none] self-stretch relative tracking-[-0.01em] leading-[20px] font-medium text-[inherit]'>
               Synergy AI
@@ -145,7 +145,7 @@ export default function SideNavBar() {
           ))}
         </div>
       </div>
-      <Separator orientation='vertical' className='h-screen '></Separator>
+      <Separator orientation='vertical' className='my-8 h-full stroke-1 bg-stroke-soft-200'></Separator>
     </div>
   );
 }
