@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils';
 import { ChevronRight, LucideIcon } from 'lucide-react';
+import { ReactNode } from 'react';
 
 type NavButtonProps = React.HTMLAttributes<HTMLDivElement> & {
   active: boolean;
   name: string;
-  icon: LucideIcon;
+  icon: ReactNode;
 };
 
 export default function NavButton({
