@@ -268,7 +268,7 @@ export default function CampaignPageCo() {
             </div>
           </div>
           <section className=' self-stretch flex flex-col items-start justify-start max-w-full'>
-            <div className='grid grid-cols-1 lg:grid-cols-2  3xl:grid-cols-4  gap-4  flex-row flex-wrap items-start justify-start  box-border gap-x-5 gap-y-[22px] min-h-[340px] max-w-full'>
+            <div className='grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-3 3xl:grid-cols-4   gap-4  flex-row flex-wrap items-start justify-start  box-border gap-x-5 gap-y-[22px] min-h-[340px] max-w-full'>
               {campaigns.map((campaign, index) => (
                 <CampaignCo
                   key={index}
@@ -334,7 +334,7 @@ export default function CampaignPageCo() {
             </div>
           </div>
           <section className='self-stretch flex flex-col items-start justify-start max-w-full'>
-            <div className='grid grid-cols-1 lg:grid-cols-2  3xl:grid-cols-4  gap-4  flex-row flex-wrap items-start justify-start  box-border gap-x-5 gap-y-[22px] min-h-[340px] max-w-full'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4  gap-4  flex-row flex-wrap items-start justify-start  box-border gap-x-5 gap-y-[22px] min-h-[340px] max-w-full'>
               {campaigns.map((campaign, index) => (
                 <CampaignCo
                   key={index}
