@@ -298,10 +298,10 @@ export default function CampaignPageCo() {
                   CampaignType={campaign.campaignType}
                   StartedOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
                   EndsOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
-                  CompletedCalls={campaign.completedCalls}
-                  ScheduledCalls={campaign.scheduledCalls}
-                  AnsweredCalls={campaign.answeredCalls}
-                  TotalCalls={campaign.totalCalls}
+                  CompletedCalls={campaign.completedCalls || 0}
+                  ScheduledCalls={campaign.scheduledCalls || 0}
+                  AnsweredCalls={campaign.answeredCalls || 0}
+                  TotalCalls={campaign.totalCalls || 0}
                 />
               ))}
             </div>
@@ -333,10 +333,10 @@ export default function CampaignPageCo() {
                   CampaignType={campaign.campaignType}
                   StartedOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
                   EndsOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
-                  CompletedCalls={campaign.completedCalls}
-                  ScheduledCalls={campaign.scheduledCalls}
-                  AnsweredCalls={campaign.answeredCalls}
-                  TotalCalls={campaign.totalCalls}
+                  CompletedCalls={campaign.completedCalls || 0}
+                  ScheduledCalls={campaign.scheduledCalls || 0}
+                  AnsweredCalls={campaign.answeredCalls || 0}
+                  TotalCalls={campaign.totalCalls || 0}
                 />
               ))}
             </div>
@@ -368,10 +368,10 @@ export default function CampaignPageCo() {
                   CampaignType={campaign.campaignType}
                   StartedOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
                   EndsOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
-                  CompletedCalls={campaign.completedCalls}
-                  ScheduledCalls={campaign.scheduledCalls}
-                  AnsweredCalls={campaign.answeredCalls}
-                  TotalCalls={campaign.totalCalls}
+                  CompletedCalls={campaign.completedCalls || 0}
+                  ScheduledCalls={campaign.scheduledCalls || 0}
+                  AnsweredCalls={campaign.answeredCalls || 0}
+                  TotalCalls={campaign.totalCalls || 0}
                 />
               ))}
             </div>

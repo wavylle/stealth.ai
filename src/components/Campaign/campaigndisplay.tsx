@@ -24,11 +24,11 @@ export default function CampaignCo({  CampaignName , CampaignDescription, Campai
           </div>
           <Badge variant='outline'>{CampaignType}</Badge>
         </div>
-        <div className='self-stretch relative leading-[16px] text-text-sub-500 [display:-webkit-inline-box] overflow-hidden text-ellipsis [-webkit-line-clamp:2] [-webkit-box-orient:vertical]'>
+        <div className='mb-2 self-stretch relative leading-[16px] text-text-sub-500 [display:-webkit-inline-box] overflow-hidden text-ellipsis [-webkit-line-clamp:2] [-webkit-box-orient:vertical]'>
           {CampaignDescription}
         </div>
         <Separator />
-        <div className='self-stretch h-10 flex flex-row items-center justify-start gap-[8px] text-center text-base'>
+        <div className='my-2 self-stretch h-10 flex flex-row items-center justify-start gap-[8px] text-center text-base'>
           <div className='flex-1 flex flex-col items-start justify-start gap-[4px]'>
             <div className='self-stretch relative tracking-[-0.01em] leading-[20px] font-medium'>
               {CompletedCalls} / {ScheduledCalls}
@@ -48,7 +48,7 @@ export default function CampaignCo({  CampaignName , CampaignDescription, Campai
           </div>
         </div>
         <Separator />
-        <div className='self-stretch h-4 flex flex-row items-start justify-start py-0 pr-[3px] pl-1 box-border gap-[12px] text-text-soft-400'>
+        <div className='my-2 self-stretch h-4 flex flex-row items-start justify-start py-0 pr-[3px] pl-1 box-border gap-[12px] text-text-soft-400'>
           <div className='flex-1 flex flex-row items-start justify-start gap-[11px]'>
             <div className='relative leading-[16px] inline-block min-w-[55px]'>
               Starts on:
