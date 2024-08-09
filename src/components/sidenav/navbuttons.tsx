@@ -6,6 +6,7 @@ type NavButtonProps = React.HTMLAttributes<HTMLDivElement> & {
   active: boolean;
   name: string;
   icon: ReactNode;
+  href: string;
 };
 
 export default function NavButton({
@@ -13,15 +14,16 @@ export default function NavButton({
   active,
   icon,
   name,
+  href,
   ...props
 }: NavButtonProps) {
   return (
-    <div
+    <a
       className={cn(
         'self-stretch rounded-lg  flex flex-row items-center justify-center py-2 px-3 relative gap-2',
         className,
         active && 'bg-bg-weak-100'
-      )}>
+      )} href={href}>
       <div>{icon}</div>
       <div
         className={cn(
@@ -36,6 +38,6 @@ export default function NavButton({
       {active && (
         <div className='h-5 w-1 absolute   left-[-20px] rounded-tl-none rounded-tr rounded-br rounded-bl-none bg-prime-base' />
       )}
-    </div>
+    </a>
   );
 }

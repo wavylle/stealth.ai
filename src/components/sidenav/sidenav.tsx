@@ -61,7 +61,7 @@ const SETTINGS = [
 export default function SideNavBar() {
   const pathname = usePathname();
   return (
-    <div className='flex flex-row w-[242px] min-w-[242px]'>
+    <div className='flex flex-row w-[242px] min-w-[242px] hidden lg:block'>
       <div className=' w-full h-screen flex flex-col items-start justify-start p-5 box-border gap-[19px] leading-[normal] tracking-[normal] text-left text-sm text-text-sub-500 font-label-x-small'>
         <div className='flex flex-row items-start self-stretch justify-start gap-3 text-text-main-900'>
           <BrainCircuit className=' w-8 h-full mx-[2px] stroke-slate-500 stroke-[2px] ' />
@@ -84,6 +84,7 @@ export default function SideNavBar() {
 
             {MAIN.map((item, index) => (
               <NavButton
+                href={item.path}
                 key={index}
                 name={item.name}
                 active={pathname === item.path}
@@ -107,6 +108,7 @@ export default function SideNavBar() {
             </div>
             {CAMPAIGNS.map((item, index) => (
               <NavButton
+                href={item.path}
                 key={index}
                 name={item.name}
                 active={pathname === item.path}
@@ -129,6 +131,7 @@ export default function SideNavBar() {
         <div className='self-stretch flex flex-col items-start justify-start gap-1.5 text-left text-sm text-text-main-900 font-label-x-small'>
           {SETTINGS.map((item, index) => (
             <NavButton
+              href={item.path}
               key={index}
               name={item.name}
               active={pathname === item.path}
