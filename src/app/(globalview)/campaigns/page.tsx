@@ -1,7 +1,11 @@
+"use client";
 
 import CampaignCo from '@/components/Campaign/campaigndisplay';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Phone, PhoneIncoming, PhoneOutgoing } from 'lucide-react';
+import { useEffect, useState } from 'react';
+
+
 const campaigns = [
   {
     CampaignName: 'Agent Red for Slack Comm',
@@ -244,7 +248,21 @@ const campaigns = [
     TotalCalls: 6000,
   },
 ];
+
 export default function CampaignPageCo() {
+  const [campaigns, setCampaigns] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('http://localhost:3000/api/campaigns');
+      const data = await response.json();
+      console.log(data);
+      setCampaigns(data.campaigns);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className='w-full  max-w-full flex flex-col items-start justify-start py-5 px-8 box-border gap-5 leading-[normal] tracking-[normal] text-left text-sm text-text-sub-500 font-label-x-small'>
           <div className='h-22 w-full'>
