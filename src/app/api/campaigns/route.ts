@@ -23,6 +23,8 @@ export async function GET(req: Request) {
         const campaigns = await Campaigns.find({ userId: user.id });
         console.log(campaigns)
 
+        console.log(user.id)
+
         return NextResponse.json({
             message: "get request successful",
             campaigns: campaigns

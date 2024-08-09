@@ -19,6 +19,7 @@ if (!cached) {
 export const connect = async () => {
   if (cached.conn) return cached.conn;
 
+  console.log("connecting to mongodb...");
   cached.promise =
     cached.promise ||
     mongoose.connect(MONGODB_URL, {

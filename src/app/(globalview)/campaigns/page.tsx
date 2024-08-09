@@ -293,15 +293,15 @@ export default function CampaignPageCo() {
               {campaigns.map((campaign, index) => (
                 <CampaignCo
                   key={index}
-                  CampaignName={campaign.CampaignName}
-                  CampaignDescription={campaign.CampaignDescription}
-                  CampaignType={campaign.CampaignType}
-                  StartedOn={campaign.StartedOn}
-                  EndsOn={campaign.EndsOn}
-                  CompletedCalls={campaign.CompletedCalls}
-                  ScheduledCalls={campaign.ScheduledCalls}
-                  AnsweredCalls={campaign.AnsweredCalls}
-                  TotalCalls={campaign.TotalCalls}
+                  CampaignName={campaign.campaignName}
+                  CampaignDescription={campaign.campaignDescription}
+                  CampaignType={campaign.campaignType}
+                  StartedOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
+                  EndsOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
+                  CompletedCalls={campaign.completedCalls}
+                  ScheduledCalls={campaign.scheduledCalls}
+                  AnsweredCalls={campaign.answeredCalls}
+                  TotalCalls={campaign.totalCalls}
                 />
               ))}
             </div>
@@ -324,19 +324,19 @@ export default function CampaignPageCo() {
           <section className='self-stretch flex flex-col items-start justify-start max-w-full'>
             <div className='grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-3 3xl:grid-cols-4  gap-4  flex-row flex-wrap items-start justify-start  box-border gap-x-5 gap-y-[22px] min-h-[340px] max-w-full'>
               {campaigns
-                .filter((campaign) => campaign.CampaignType === 'Inbound')
+                .filter((campaign) => campaign.campaignType === 'Inbound')
                 .map((campaign, index) => (
                 <CampaignCo
                   key={index}
-                  CampaignName={campaign.CampaignName}
-                  CampaignDescription={campaign.CampaignDescription}
-                  CampaignType={campaign.CampaignType}
-                  StartedOn={campaign.StartedOn}
-                  EndsOn={campaign.EndsOn}
-                  CompletedCalls={campaign.CompletedCalls}
-                  ScheduledCalls={campaign.ScheduledCalls}
-                  AnsweredCalls={campaign.AnsweredCalls}
-                  TotalCalls={campaign.TotalCalls}
+                  CampaignName={campaign.campaignName}
+                  CampaignDescription={campaign.campaignDescription}
+                  CampaignType={campaign.campaignType}
+                  StartedOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
+                  EndsOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
+                  CompletedCalls={campaign.completedCalls}
+                  ScheduledCalls={campaign.scheduledCalls}
+                  AnsweredCalls={campaign.answeredCalls}
+                  TotalCalls={campaign.totalCalls}
                 />
               ))}
             </div>
@@ -359,19 +359,19 @@ export default function CampaignPageCo() {
           <section className='self-stretch flex flex-col items-start justify-start max-w-full'>
             <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4  gap-4  flex-row flex-wrap items-start justify-start  box-border gap-x-5 gap-y-[22px] min-h-[340px] max-w-full'>
               {campaigns
-                .filter((campaign) => campaign.CampaignType === 'Outbound')
+                .filter((campaign) => campaign.campaignType === 'Outbound')
                 .map((campaign, index) => (
                 <CampaignCo
                   key={index}
-                  CampaignName={campaign.CampaignName}
-                  CampaignDescription={campaign.CampaignDescription}
-                  CampaignType={campaign.CampaignType}
-                  StartedOn={campaign.StartedOn}
-                  EndsOn={campaign.EndsOn}
-                  CompletedCalls={campaign.CompletedCalls}
-                  ScheduledCalls={campaign.ScheduledCalls}
-                  AnsweredCalls={campaign.AnsweredCalls}
-                  TotalCalls={campaign.TotalCalls}
+                  CampaignName={campaign.campaignName}
+                  CampaignDescription={campaign.campaignDescription}
+                  CampaignType={campaign.campaignType}
+                  StartedOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
+                  EndsOn={new Date(campaign.createdAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: '2-digit' })}
+                  CompletedCalls={campaign.completedCalls}
+                  ScheduledCalls={campaign.scheduledCalls}
+                  AnsweredCalls={campaign.answeredCalls}
+                  TotalCalls={campaign.totalCalls}
                 />
               ))}
             </div>
