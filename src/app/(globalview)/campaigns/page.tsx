@@ -254,7 +254,7 @@ export default function CampaignPageCo() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:3000/api/campaigns');
+      const response = await fetch('/api/campaigns');
       const data = await response.json();
       console.log(data);
       setCampaigns(data.campaigns);
