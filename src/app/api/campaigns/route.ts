@@ -13,8 +13,9 @@ export async function GET(req: Request) {
         const user = await currentUser(); // Get the current user
         if (!user) {
             return NextResponse.json({
-                message: "unauthorized"
-            }, { status: 401 });
+                message: "unauthorized",
+                campaigns: []
+            });
         }
 
         await connect();
@@ -26,13 +27,15 @@ export async function GET(req: Request) {
         console.log(user.id)
 
         return NextResponse.json({
-            message: "get request successful",
+            message: "success",
             campaigns: campaigns
         });
     } catch (error) {
+
         return NextResponse.json({
-            message: "An error occurred",
-        }, { status: 500 });
+            message: "error",
+            campaigns: []
+        });
     }
 }
 
