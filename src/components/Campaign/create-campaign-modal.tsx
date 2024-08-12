@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { BadgePlus, PhoneIncoming, PhoneOutgoing, X } from 'lucide-react';
+import { BadgePlus, PhoneIncoming, PhoneOutgoing, Plus, X } from 'lucide-react';
 import { RadioGroupItem, RadioGroup } from '@/components/ui/radio-group';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
