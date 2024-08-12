@@ -11,7 +11,12 @@ export default function CreateCampaignModal() {
 	return (
 		<div className=''>
 			<Dialog>
-				<DialogTrigger>Open</DialogTrigger>
+				<DialogTrigger asChild>
+					<Button className='flex-1'>
+						<Plus className=' mr-2 w-4' />
+						Create Campaign
+					</Button>
+				</DialogTrigger>
 				<DialogContent className='p-0 items-center justify-center min-w-[800px] w-[800px] rounded-[20px] '>
 					<div className=' w-[800px] shadow-[0px_2px_4px_rgba(27,_28,_29,_0.04)] rounded-[20px] bg-bg-white-0 border-stroke-soft-200 border-[1px] border-solid box-border max-w-full overflow-hidden flex flex-col items-center justify-start leading-[normal] tracking-[normal] text-left text-sm text-text-main-900 font-paragraph-x-small'>
 						<div className='self-stretch bg-bg-white-0 overflow-x-auto flex flex-row items-center justify-start py-4 pl-4 pr-6 gap-3.5'>
