@@ -34,7 +34,7 @@ export default function CreateCampaignModal() {
 							</div>
 						</div>
 						<Separator />
-						<section className='self-stretch bg-bg-white-0 flex flex-col items-start justify-start p-4  gap-4 max-w-full text-left text-sm text-text-main-900 font-paragraph-x-small'>
+						<section className='self-stretch bg-bg-white-0 flex flex-col items-start justify-start p-4 box-border gap-4 max-w-full text-left text-sm text-text-main-900 font-paragraph-x-small'>
 							<div className='grid flex-1 w-full  items-center gap-1.5'>
 								<Label htmlFor='picture'>
 									Name of the Campaign
