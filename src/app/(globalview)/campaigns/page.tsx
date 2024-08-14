@@ -266,9 +266,8 @@ export default function CampaignPageCo() {
 
 	return (
 		<div className='w-full  max-w-full flex flex-col items-start justify-start py-5 px-8 box-border gap-5 leading-[normal] tracking-[normal] text-left text-sm text-text-sub-500 font-label-x-small'>
-			<div className='h-22 w-full'></div>
 			<Tabs defaultValue='all' className='flex flex-col w-full '>
-				<div className='flex justify-between flex-1 self-stretch w-full max-w-full'>
+				<div className=' flex justify-between flex-1 self-stretch w-full max-w-full'>
 					<TabsList className='grid w-[620px] grid-cols-3'>
 						<TabsTrigger value='all'>All Campaigns</TabsTrigger>
 						<TabsTrigger value='Inbound'>Inbound Campaigns</TabsTrigger>
@@ -277,11 +276,11 @@ export default function CampaignPageCo() {
 					<CreateCampaignModal />
 				</div>
 				<TabsContent value='all'>
-					<div className='my-8 self-stretch flex flex-row flex-wrap items-center justify-start gap-3.5 max-w-full text-lg text-text-main-900'>
-						<div className='h-12 w-12 rounded-full bg-bg-weak-100 overflow-hidden shrink-0 flex flex-row items-center justify-center p-3 box-border'>
+					<div className='sticky top-0 py-4 self-stretch flex flex-row items-center justify-start gap-4 max-w-full text-lg text-text-main-900'>
+						<div className='  h-12 w-12 rounded-full bg-bg-weak-100 overflow-hidden  flex flex-row items-center justify-center p-3 box-border'>
 							<Phone className='w-[18px] h-[18px] stroke-prime-base' />
 						</div>
-						<div className='flex-1 flex flex-col items-start justify-start gap-1 min-w-[684px] max-w-full mq800:min-w-full'>
+						<div className='flex-1 flex flex-col items-start justify-start gap-1 max-w-full mq800:min-w-full'>
 							<h3 className='m-0 self-stretch relative text-inherit tracking-[-0.01em] leading-[24px] font-medium font-[inherit]'>
 								All Campaigns
 							</h3>
@@ -398,6 +397,7 @@ export default function CampaignPageCo() {
 					</section>
 				</TabsContent>
 			</Tabs>
+			<div className='h-[1234px] bg-red-400 w-full'></div>
 		</div>
 	);
 }

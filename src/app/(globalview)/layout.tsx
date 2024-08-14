@@ -7,11 +7,13 @@ const Layout = (props: Props) => {
   // auth().protect()
 
   return (
-    <div className="flex overflow-hidden h-screen">
-      <SideNavBar />
-      <div className="w-full">{props.children}</div>
-    </div>
-  );
+		<div className='flex min-h-screen w-full flex-col h-screen'>
+			<SideNavBar />
+			<div className='flex flex-col w-full sm:pl-[242px] h-full'>
+				{props.children}
+			</div>
+		</div>
+	);
 };
 
 export default Layout;
