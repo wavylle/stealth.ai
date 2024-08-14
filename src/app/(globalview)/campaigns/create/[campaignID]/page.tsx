@@ -10,7 +10,7 @@ import AgentCreator from '@/components/agentform/agent-creator';
 type Inputs = z.infer<typeof FormDataSchema>;
 
 
-export const FormDataSchema = z.object({
+const FormDataSchema = z.object({
 	firstName: z.string().min(1, 'First name is required'),
 	lastName: z.string().min(1, 'Last name is required'),
 	email: z.string().min(1, 'Email is required').email('Invalid email address'),
