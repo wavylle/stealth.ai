@@ -1,8 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-zodResolver
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -121,10 +119,7 @@ export default function Form() {
 			{/* Form */}
 			<form className='mt-12 py-12' onSubmit={handleSubmit(processForm)}>
 				{currentStep === 0 && (
-					<div
-						initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
-						animate={{ x: 0, opacity: 1 }}
-						transition={{ duration: 0.3, ease: 'easeInOut' }}>
+					<div>
 						<h2 className='text-base font-semibold leading-7 text-gray-900'>
 							Personal Information
 						</h2>
