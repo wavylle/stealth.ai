@@ -264,7 +264,7 @@ export default function CampaignPageCo() {
 		fetchData();
 	}, []);
 
-	return (
+  return (
 		<div className='w-full  max-w-full flex flex-col items-start justify-start py-5 px-8 box-border gap-5 leading-[normal] tracking-[normal] text-left text-sm text-text-sub-500 font-label-x-small'>
 			<Tabs defaultValue='all' className='flex flex-col w-full '>
 				<div className=' flex justify-between flex-1 self-stretch w-full max-w-full'>
