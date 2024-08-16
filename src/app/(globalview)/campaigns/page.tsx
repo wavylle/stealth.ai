@@ -1,9 +1,11 @@
 import React from 'react'
 import CampaignPageCo from '@/components/Campaign/campaignpage'
+import { currentUser } from '@clerk/nextjs/server'
 
-const CampaignsPage = () => {
+const CampaignsPage = async () => {
+	const user = await currentUser()
 	return (
-	  <CampaignPageCo/>
+	  <CampaignPageCo user={user}/>
   )
 }
 

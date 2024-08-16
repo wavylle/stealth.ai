@@ -1,3 +1,5 @@
+"use client";
+
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,8 +15,10 @@ import {z} from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { DialogClose } from "@radix-ui/react-dialog";
+import { useRouter } from "next/navigation";
 
-export default function CreateCampaignModal({onCampaignCreated}) {
+
+export default function CreateCampaignModal() {
   const {
     register,
     handleSubmit,
@@ -22,9 +26,9 @@ export default function CreateCampaignModal({onCampaignCreated}) {
     reset,
 	} = useForm();
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
+	const router = useRouter();
 
   const onSubmit = async (data: FieldValues) => {
-	// TODO: send data to server
 	const response = await fetch("/api/campaigns", {
 	method: "POST",
 	body: JSON.stringify(data),
@@ -39,12 +43,9 @@ export default function CreateCampaignModal({onCampaignCreated}) {
 	reset();
 	
 	// Close the dialog after submission
-	  setIsDialogOpen(false);
+	setIsDialogOpen(false);
+	router.refresh(); // This will refresh the page and fetch the latest campaigns
 	  
-	// Trigger the fetch for campaigns in the parent component
-    if (onCampaignCreated) {
-		onCampaignCreated();
-	  }
   };
   return (
     <div className="">

@@ -10,8 +10,17 @@ const generateToken = () => {
 
 export async function GET(req: Request) {
     try {
-        const user = await currentUser(); // Get the current user
-        if (!user) {
+        // Parse the URL from the request
+        const url = new URL(req.url);
+
+        // Get the 'userId' parameter from the URL search parameters
+        const userId = url.searchParams.get('userId');
+
+        console.log("API...")
+        console.log(userId)
+
+        // const user = await currentUser(); // Get the current user
+        if (!userId) {
             return NextResponse.json({
                 message: "unauthorized",
                 campaigns: []
@@ -21,10 +30,9 @@ export async function GET(req: Request) {
         await connect();
 
         // Get campaigns from the database for the user ID
-        const campaigns = await Campaigns.find({ userId: user.id });
+        const campaigns = await Campaigns.find({ userId: userId });
+        console.log("Campaigns...")
         console.log(campaigns)
-
-        console.log(user.id)
 
         return NextResponse.json({
             message: "success",
