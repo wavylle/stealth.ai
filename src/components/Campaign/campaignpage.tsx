@@ -1,6 +1,5 @@
 'use client';
 
-import { Suspense } from 'react'
 import CampaignCo from '@/components/Campaign/campaigndisplay';
 import CreateCampaignModal from '@/components/Campaign/create-campaign-modal';
 import { Button } from '@/components/ui/button';
