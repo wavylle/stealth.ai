@@ -1,8 +1,11 @@
 import CampaignCo from "@/components/Campaign/campaigndisplay";
 import CreateCampaignModal from "@/components/Campaign/create-campaign-modal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { currentUser } from "@clerk/nextjs/server";
 import { Phone, PhoneIncoming, PhoneOutgoing } from "lucide-react";
+
+interface User {
+	id: string;
+}
 
 interface Campaign {
 	campaignName: string;
@@ -16,8 +19,7 @@ interface Campaign {
 	// Add other properties if needed
 }
 
-export default async function CampaignPageCo() {
-	const user = await currentUser()
+export default async function CampaignPageCo({ user }: { user: User }) {
 	if (!user) {
 		return <div>You are not logged in</div>
 	}
