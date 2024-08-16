@@ -397,7 +397,7 @@ export default function CampaignPageCo() {
 					</section>
 				</TabsContent>
 			</Tabs>
-			<div className='h-[1234px] bg-red-400 w-full'></div>
+			{/* <div className='h-[1234px] bg-red-400 w-full'></div> */}
 		</div>
 	);
 }
