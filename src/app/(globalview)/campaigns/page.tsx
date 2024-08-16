@@ -5,7 +5,7 @@ import { currentUser } from '@clerk/nextjs/server'
 const CampaignsPage = async () => {
 	const user = await currentUser()
 	return (
-	  <CampaignPageCo user={user}/>
+	  <CampaignPageCo/>
   )
 }
 

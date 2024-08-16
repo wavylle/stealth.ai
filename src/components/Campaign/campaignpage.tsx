@@ -1,14 +1,31 @@
 import CampaignCo from "@/components/Campaign/campaigndisplay";
 import CreateCampaignModal from "@/components/Campaign/create-campaign-modal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { currentUser } from "@clerk/nextjs/server";
 import { Phone, PhoneIncoming, PhoneOutgoing } from "lucide-react";
 
-export default async function CampaignPageCo({ user }) {
+interface Campaign {
+	campaignName: string;
+	campaignDescription: string;
+	campaignType: string;
+	createdAt: string;
+	completedCalls?: number;
+	scheduledCalls?: number;
+	answeredCalls?: number;
+	totalCalls?: number;
+	// Add other properties if needed
+}
+
+export default async function CampaignPageCo() {
+	const user = await currentUser()
+	if (!user) {
+		return <div>You are not logged in</div>
+	}
   const response = await fetch(
     `${process.env.SERVER}/api/campaigns?userId=${user.id}`
   );
   const data = await response.json();
-  const campaigns = data.campaigns;
+  const campaigns: Campaign[] = data.campaigns;
 
   return (
     <div className="w-full max-w-full flex flex-col items-start justify-start py-5 px-8 box-border gap-5 leading-[normal] tracking-[normal] text-left text-sm text-text-sub-500 font-label-x-small">
@@ -82,7 +99,7 @@ export default async function CampaignPageCo({ user }) {
   );
 }
 
-function CampaignsList({ campaigns }) {
+function CampaignsList({ campaigns }: { campaigns: Campaign[] }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-4 flex-row flex-wrap items-start justify-start box-border gap-x-5 gap-y-[22px] min-h-[340px] max-w-full">
       {campaigns.map((campaign, index) => (
