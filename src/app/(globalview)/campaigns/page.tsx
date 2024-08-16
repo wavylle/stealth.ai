@@ -253,16 +253,16 @@ const campaigns = [
 export default function CampaignPageCo() {
 	const [campaigns, setCampaigns] = useState<any[]>([]);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await fetch('/api/campaigns');
-			const data = await response.json();
-			console.log(data);
-			setCampaigns(data.campaigns);
-		};
-
-		fetchData();
-	}, []);
+	const fetchCampaigns = async () => {
+		// Fetch campaigns data from your API
+		const response = await fetch("/api/campaigns");  // Adjust the API endpoint accordingly
+		const data = await response.json();
+		setCampaigns(data.campaigns);
+	  };
+	
+	  useEffect(() => {
+		fetchCampaigns(); // Fetch campaigns on page load
+	  }, []);
 
   return (
 		<div className='w-full  max-w-full flex flex-col items-start justify-start py-5 px-8 box-border gap-5 leading-[normal] tracking-[normal] text-left text-sm text-text-sub-500 font-label-x-small'>
@@ -273,10 +273,10 @@ export default function CampaignPageCo() {
 						<TabsTrigger value='Inbound'>Inbound Campaigns</TabsTrigger>
 						<TabsTrigger value='Outbound'>Outbound Campaigns</TabsTrigger>
 					</TabsList>
-					<CreateCampaignModal />
+					<CreateCampaignModal onCampaignCreated={fetchCampaigns} />
 				</div>
 				<TabsContent value='all'>
-					<div className='sticky top-0 py-4 self-stretch flex flex-row items-center justify-start gap-4 max-w-full text-lg text-text-main-900'>
+					<div className='sticky top-0 my-8 self-stretch flex flex-row items-center justify-start gap-4 max-w-full text-lg text-text-main-900'>
 						<div className='  h-12 w-12 rounded-full bg-bg-weak-100 overflow-hidden  flex flex-row items-center justify-center p-3 box-border'>
 							<Phone className='w-[18px] h-[18px] stroke-prime-base' />
 						</div>

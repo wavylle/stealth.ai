@@ -42,17 +42,17 @@ export async function GET(req: Request) {
 
 // create a new campaign
 export async function POST(req: Request) {
-    const { userId, campaignName, campaignDescription, campaignType } = await req.json();
+    const { campaignName, campaignDescription, campaignType } = await req.json();
     try {
         const user = await currentUser(); // Get the current user
-        // if (!user) {
-        //     return NextResponse.json({
-        //         message: "unauthorized"
-        //     }, { status: 401 });
-        // }
+        if (!user) {
+            return NextResponse.json({
+                message: "unauthorized"
+            }, { status: 401 });
+        }
         await connect();
         const campaign = await Campaigns.create({
-            userId: userId,
+            userId: user.id,
             campaignId: generateToken(),
             campaignName,
             campaignDescription,
